@@ -27,14 +27,17 @@ function SuggestionBlock(props) {
     }, [props.text]);
 
     return (
-        <div className="suggest">
-            {suggests.length > 0 &&
-                suggests.map((word, index) => (
-                    <Suggestion key={index} text={word} onClick={handleSuggestedClick} />
-                ))
-            }
-        </div>
+        <>
+            {suggests.length > 0 && (
+                <div className="suggest">
+                    {suggests.map((word, index) => (
+                        <Suggestion key={index} text={word} onClick={handleSuggestedClick} />
+                    ))}
+                </div>
+            )}
+        </>
     );
+
 }
 
 export default SuggestionBlock;
