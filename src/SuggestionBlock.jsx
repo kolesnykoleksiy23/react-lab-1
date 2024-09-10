@@ -15,8 +15,9 @@ function SuggestionBlock(props) {
     useEffect(() => {
         // eslint-disable-next-line react/prop-types
         if (props.text) {
-            // eslint-disable-next-line react/prop-types
-            const filteredSuggestions = wordsArray.filter(word => word.startsWith(props.text))
+            const filteredSuggestions = wordsArray
+                // eslint-disable-next-line react/prop-types
+                .filter(word => word.startsWith(props.text) && word !== props.text)
                 .slice(0, 3);
             setSuggest(filteredSuggestions);
         } else {
