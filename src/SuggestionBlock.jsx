@@ -2,29 +2,24 @@ import './InputStyle.css';
 import Suggestion from "./Suggestion.jsx";
 import { useState, useEffect } from "react";
 
-function SuggestionBlock(props) {
+function SuggestionBlock({onClick, text, wordsArray}) {
     const [suggests, setSuggest] = useState([]);
 
-    const wordsArray = ['abra', 'kadabra', 'alibaba', 'abracadabra'];
-
-    const handleSuggestedClick = (text)=>{
+    const handleSuggestedClick = (text) => {
         setSuggest([]);
-        // eslint-disable-next-line react/prop-types
-        props.onClick(text);
+        onClick(text);
     }
+
     useEffect(() => {
-        // eslint-disable-next-line react/prop-types
-        if (props.text) {
+        if (text) {
             const filteredSuggestions = wordsArray
-                // eslint-disable-next-line react/prop-types
-                .filter(word => word.startsWith(props.text) && word !== props.text)
+                .filter(word => word.startsWith(text) && word !== text)
                 .slice(0, 3);
             setSuggest(filteredSuggestions);
         } else {
             setSuggest([]);
         }
-        // eslint-disable-next-line react/prop-types
-    }, [props.text]);
+    }, [text, wordsArray]);
 
     return (
         <>
@@ -37,7 +32,6 @@ function SuggestionBlock(props) {
             )}
         </>
     );
-
 }
 
 export default SuggestionBlock;

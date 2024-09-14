@@ -2,20 +2,57 @@
     border: 1px solid #ccc;
     padding: 10px;
     font-size: 16px;
+    border-radius: 4px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
-.suggest{
+.inputStyle:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+.suggest {
     margin-left: 0;
     background-color: white;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 10px;
-    width: 165px;
+    width: 200px;
     border-radius: 4px;
     z-index: 10;
+    position: absolute;
+    top: 40px;
 }
+
 .suggest-item {
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
     border-bottom: 1px solid #eee;
-    width: 165px;
+    transition: background-color 0.2s ease;
+}
+
+.suggest-item:hover {
+    background-color: #f0f0f0;
+}
+
+button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #003f7f;
 }
